@@ -1,0 +1,66 @@
+{
+  "name": "chalk-pipe",
+  "version": "5.1.1",
+  "description": "Create chalk style schemes with simpler style strings",
+  "type": "module",
+  "exports": "./dist/index.js",
+  "types": "dist",
+  "engines": {
+    "node": ">=12"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "pretest": "del-cli dist && npm run build",
+    "test": "xo && ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LitoMore/chalk-pipe.git"
+  },
+  "author": "LitoMore",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LitoMore/chalk-pipe/issues"
+  },
+  "homepage": "https://github.com/LitoMore/chalk-pipe#readme",
+  "devDependencies": {
+    "@ava/typescript": "^1.1.1",
+    "@sindresorhus/tsconfig": "^1.0.2",
+    "ava": "^3.15.0",
+    "del-cli": "^3.0.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4",
+    "xo": "^0.38.2"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0"
+  },
+  "xo": {
+    "prettier": true,
+    "rules": {
+      "unicorn/import-index": [
+        "error",
+        {
+          "ignoreImports": true
+        }
+      ]
+    }
+  },
+  "ava": {
+    "files": [
+      "source/test.ts"
+    ],
+    "extensions": {
+      "ts": "module"
+    },
+    "nonSemVerExperiments": {
+      "configurableModuleFormat": true
+    },
+    "nodeArguments": [
+      "--loader=ts-node/esm"
+    ]
+  }
+}

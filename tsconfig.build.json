@@ -1,0 +1,10 @@
+{
+    "extends": "./tsconfig.json",
+    "exclude": ["node_modules", "src/test/**/*.ts"],
+    "compilerOptions": {
+        "target": "ES6",
+        "module": "commonjs",
+        "lib": ["dom","es6","es2017","ESNext.AsyncIterable"],
+        "sourceMap": true
+    }
+  }
